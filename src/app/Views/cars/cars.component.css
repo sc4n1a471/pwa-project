@@ -8,7 +8,7 @@
 }
 
 mat-expansion-panel, mat-card {
-    width: 60%;
+    width: 80%;
     margin: 1%;
     align-self: center;
 }
