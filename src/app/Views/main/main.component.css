@@ -1,8 +1,23 @@
-.main-mindenseg {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
+.every-component {
+    height: 92vh;
+}
+
+span {
+    font-size: medium;
+}
+
+mat-card {
+    width: 60%;
+    align-self: center;
+    padding: 5%;
+    margin: 5%;
+}
+
+@media (max-width: 800px) {
+    mat-card {
+        width: 90%;
+        align-self: center;
+        padding: 5%;
+        margin: 5%;
+    }
 }

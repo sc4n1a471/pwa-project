@@ -150,4 +150,9 @@ export class CarServiceService {
             )
             .subscribe();
     }
+
+
+    get carsLoaded(): boolean {
+        return this._carsLoaded;
+    }
 }

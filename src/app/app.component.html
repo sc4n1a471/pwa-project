@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
+  <mat-sidenav #sidenav mode="push">
     <app-nav
       (onCloseSidenav)="onCloseSidenav($event, sidenav)"
       [currentPage]="openedPage"
