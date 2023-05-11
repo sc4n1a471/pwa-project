@@ -22,13 +22,16 @@ html .every-component {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /*overflow-y: scroll;*/
 }
 
 html mat-expansion-panel {
     width: 80%;
     margin: 1% !important;
     align-self: center;
+}
+
+html mat-card {
+    margin: 1% !important;
 }
 
 .actionButtons {

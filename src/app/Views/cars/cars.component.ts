@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CarServiceService} from "../../Services/car-service.service";
 import {Car} from "../../Models/Car";
+import {Observable, switchMap} from "rxjs";
 
 @Component({
   selector: 'app-cars',
@@ -13,20 +14,17 @@ export class CarsComponent implements OnInit {
 
     isExpansionOpen = false
 
-    constructor(
-        private carService: CarServiceService
-    ) {
-    }
+    constructor(private carService: CarServiceService) {}
 
-    async ngOnInit() {
-        await this.carService.getCars()
+    ngOnInit() {
+        this.carService.getCars()
     }
 
     onCollapse() {
         this.isExpansionOpen = !this.isExpansionOpen
     }
 
-    addToFav(car: Car) {
-        console.log("Selected car: ", car)
+    async addToFav(car: Car) {
+        await this.carService.uploadCar(car)
     }
 }

@@ -1,1 +1,65 @@
-<p>favorites works!</p>
+<div class="every-component">
+    <div class="actionButtonsDiv">
+        <button
+            class="actionButtons"
+            mat-raised-button
+            color="warn"
+            (click)="clearFavoriteCars()">
+            Lista kiürítése
+        </button>
+    </div>
+    <mat-expansion-panel (afterCollapse)="onCollapse()"
+                         *ngFor="let car of favoriteCars$ | async">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{car.license_plate}}
+            </mat-panel-title>
+            <mat-panel-description>
+                {{car.model != "DEFAULT_VALUE" ? car.model : "Not known yet"}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <div *ngIf="car.model !== 'DEFAULT_VALUE'">
+            <mat-card>
+                <mat-card-content>{{car.brand}}</mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content>{{car.model}}</mat-card-content>
+            </mat-card>
+            <mat-card
+                *ngIf="
+                    car.codename != 'DEFAULT_VALUE' &&
+                    car.codename != ''
+                ">
+                <mat-card-content>{{car.codename}}</mat-card-content>
+            </mat-card>
+            <mat-card>
+                <mat-card-content>{{car.year}}</mat-card-content>
+            </mat-card>
+            <mat-card
+                *ngIf="
+                    car.comment != 'DEFAULT_VALUE'
+                ">
+                <mat-card-content>{{car.comment}}</mat-card-content>
+            </mat-card>
+        </div>
+
+        <div *ngIf="car.model ==='DEFAULT_VALUE'">
+            <mat-card>
+                <mat-card-content>
+                    Data for this car is not downloaded yet
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="actionButtonsDiv">
+            <button
+                class="actionButtons"
+                mat-raised-button
+                color="warn"
+                (click)="deleteFavoriteCar(car)">
+                Törlés a kedvencek közül
+            </button>
+        </div>
+    </mat-expansion-panel>
+</div>
