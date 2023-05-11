@@ -1,8 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html .new-something, .my-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 92vh;
+    text-align: center;
+}
+
+html .every-component {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    /*overflow-y: scroll;*/
+}
+
+html mat-expansion-panel {
+    width: 80%;
+    margin: 1% !important;
+    align-self: center;
+}
+
+.actionButtons {
+    margin: 1%;
+}
+
+.actionButtonsDiv {
+    display: flex;
+}
+
+.mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*.spinner {*/
+/*    position: absolute;*/
+/*    z-index: 999;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*}*/
+/**/
+/*.overlay {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    z-index: 998;*/
+/*    backdrop-filter: blur(2px);*/
+/*}*/
