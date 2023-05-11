@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     checkUpdate() {
         this.update.checkForUpdate().then((canUpdate) => {
             if (canUpdate) {
-                alert('There is a new version available!');
+                alert('New version is available of the page, going to reload now!');
                 window.location.reload();
             }
         });

@@ -13,8 +13,8 @@ html .every-component {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    /*height: 92vh;*/
-    overflow-y: scroll;
+    height: 100%;
+    overflow: scroll;
 }
 
 html mat-expansion-panel {

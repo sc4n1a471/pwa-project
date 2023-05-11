@@ -1,27 +1,13 @@
-# PwaProject
+# pwa-project
+Ez lenni repository for pwa-project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Amit tudni kell az alkalmazásról ##
+- Egy saját API szerverről kér le rendszámokat és ahhoz tartozó adatokat az autóról, ezeket egy lenyíló expansion panel-en lehet megtekinteni
+- A panel alján van egy gomb, amivel kedvencek közé lehet tenni, amivel elmenti az Indexed DB-be
+- A kedvencek listát egy másik fülön lehet megtekinteni, ami betölti a db-ből ezeket
+- Offline működik az alkalmazás, ahogy van reszponzivitása
+- Jelenleg távolról nem érhető el az API szerver, nincs bebiztosítva még arra, hogy kívülről is elérhető legyen (fun fact: az API szerver itt található [sc4n1a471/NodeJS_Thingy](https://github.com/sc4n1a471/NodeJS-Thingy), illetve SwiftUI app is szintén van hozzá NodeJS_Thingy_SwiftUI néven)
+- [YouTube videó a működésről](https://youtu.be/Y9DFM6lWHUI)
+  - A frissítés nincs bemutatva, de az is működik, egy felugró ablak után frissül az oldal, ha új verziót lát
+- Ami design/CSS szinten nem sikerült, az a mentett autók listája.
+  - A háttér magassága nem teljesen okés. Ha beállítom 92vh-ra és overflow-y: scroll-ra, akkor nem bővül a magasság, ha több autó is van ott és összenyomják egymást

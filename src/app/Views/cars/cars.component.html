@@ -1,56 +1,59 @@
-<div class="every-component">
-    <mat-expansion-panel (afterCollapse)="onCollapse()"
-                         *ngFor="let car of cars$ | async">
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{car.license_plate}}
-            </mat-panel-title>
-            <mat-panel-description>
-                {{car.model != "DEFAULT_VALUE" ? car.model : "Not known yet"}}
-            </mat-panel-description>
-        </mat-expansion-panel-header>
+<div class="container" *ngIf="(cars$ | async) as cars">
+    <div class="every-component" [ngStyle]="{'height':cars.length === 0 ? '92vh' : 'auto'}">
+        <mat-expansion-panel (afterCollapse)="onCollapse()"
+                             *ngFor="let car of cars$ | async">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{car.license_plate}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{car.model != "DEFAULT_VALUE" ? car.model : "Not known yet"}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
 
-        <div *ngIf="car.model !== 'DEFAULT_VALUE'">
-            <mat-card>
-                <mat-card-content>{{car.brand}}</mat-card-content>
-            </mat-card>
-            <mat-card>
-                <mat-card-content>{{car.model}}</mat-card-content>
-            </mat-card>
-            <mat-card
-                *ngIf="
+            <div *ngIf="car.model !== 'DEFAULT_VALUE'">
+                <mat-card>
+                    <mat-card-content>{{car.brand}}</mat-card-content>
+                </mat-card>
+                <mat-card>
+                    <mat-card-content>{{car.model}}</mat-card-content>
+                </mat-card>
+                <mat-card
+                    *ngIf="
                     car.codename != 'DEFAULT_VALUE' &&
                     car.codename != ''
                 ">
-                <mat-card-content>{{car.codename}}</mat-card-content>
-            </mat-card>
-            <mat-card>
-                <mat-card-content>{{car.year}}</mat-card-content>
-            </mat-card>
-            <mat-card
-                *ngIf="
+                    <mat-card-content>{{car.codename}}</mat-card-content>
+                </mat-card>
+                <mat-card>
+                    <mat-card-content>{{car.year}}</mat-card-content>
+                </mat-card>
+                <mat-card
+                    *ngIf="
                     car.comment != 'DEFAULT_VALUE'
                 ">
-                <mat-card-content>{{car.comment}}</mat-card-content>
-            </mat-card>
-        </div>
+                    <mat-card-content>{{car.comment}}</mat-card-content>
+                </mat-card>
+            </div>
 
-        <div *ngIf="car.model ==='DEFAULT_VALUE'">
-            <mat-card>
-                <mat-card-content>
-                    Data for this car is not downloaded yet
-                </mat-card-content>
-            </mat-card>
-        </div>
+            <div *ngIf="car.model ==='DEFAULT_VALUE'">
+                <mat-card>
+                    <mat-card-content>
+                        Data for this car is not downloaded yet
+                    </mat-card-content>
+                </mat-card>
+            </div>
 
-        <div class="actionButtonsDiv">
-            <button
-                class="actionButtons"
-                mat-raised-button
-                color="accent"
-                (click)="addToFav(car)">
-                Kedvencekhez adás
-            </button>
-        </div>
-    </mat-expansion-panel>
+            <div class="actionButtonsDiv">
+                <button
+                    class="actionButtons"
+                    mat-raised-button
+                    color="accent"
+                    (click)="addToFav(car)">
+                    Kedvencekhez adás
+                </button>
+            </div>
+        </mat-expansion-panel>
+    </div>
+
 </div>
