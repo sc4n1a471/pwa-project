@@ -1,3 +1,7 @@
+.every-component {
+    height: 92vh;
+}
+
 .actionButtonsDiv {
     margin: 1% !important;
     width: 30%;

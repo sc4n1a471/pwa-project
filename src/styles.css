@@ -8,20 +8,13 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html .new-something, .my-profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 92vh;
-    text-align: center;
-}
-
 html .every-component {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    /*height: 92vh;*/
+    overflow-y: scroll;
 }
 
 html mat-expansion-panel {
