@@ -2,9 +2,14 @@
     height: 92vh;
 }
 
+.outerActionButtonsDiv {
+    width: 50%;
+    padding: 2%;
+}
+
 .actionButtonsDiv {
     margin: 1% !important;
-    width: 30%;
+    width: 100%;
 }
 
 .actionButtons {

@@ -1,13 +1,16 @@
 <div class="every-component">
-    <div class="actionButtonsDiv">
-        <button
-            class="actionButtons"
-            mat-raised-button
-            color="warn"
-            (click)="clearFavoriteCars()">
-            Lista kiürítése
-        </button>
+    <div class="outerActionButtonsDiv">
+        <div class="actionButtonsDiv">
+            <button
+                class="actionButtons"
+                mat-raised-button
+                color="warn"
+                (click)="clearFavoriteCars()">
+                Lista kiürítése
+            </button>
+        </div>
     </div>
+
     <mat-expansion-panel (afterCollapse)="onCollapse()"
                          *ngFor="let car of favoriteCars$ | async">
         <mat-expansion-panel-header>
